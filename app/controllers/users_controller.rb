@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   
-  def search
-    @stock = Stock.new_from_lookup(params[:stock])
-    render 'users/my_portfolio'
+  def my_portfolio
+    @user = current_user
+    @user_stocks = current_user.stocks
   end
+  
 end
